@@ -74,7 +74,8 @@ This function should only modify configuration layer settings."
      ;; org
      pdf
      prettier
-     python
+     (python :variables
+             python-backend 'lsp)
      react
      (ruby :variables
            ruby-backend 'robe
@@ -635,6 +636,8 @@ before packages are loaded."
     (ispell-set-spellchecker-params)
     (ispell-hunspell-add-multi-dic "en_GB")
     (setq ispell-dictionary "en_GB"))
+  ;; temp fix for treemacs loading issues
+  (defvaralias 'treemacs--buffer-name-prefix 'treemacs-buffer-name-prefix)
   )
 
 
